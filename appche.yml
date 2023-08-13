@@ -6,20 +6,14 @@
       yum:
         update_cache: yes
         
-# enable EPEL repo by installing the epel-release package
-    - name: install EPEL repo
-      yum: 
-        name: epel-release
-        state: present 
-
-    - name: Insatll nginx
+    - name: Insatll httpd
       yum:
-        name: nginx
+        name: httpd
         state: latest
 
-    - name: Start nginx
+    - name: Start httpd
       service:
-        name: nginx
+        name: httpd
         state: started
         enabled: yes
 
