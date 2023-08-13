@@ -21,7 +21,7 @@ pipeline {
             
             steps {
                 script {
-                    ansiblePlaybook credentialsId: 'Ansible-private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'hosts.inv', playbook: 'appche.yml'
+                    ansiblePlaybook credentialsId: 'Ansible-private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Ansible_project1/hosts.inv', playbook: 'Ansible_project1/appche.yml'
                 }
             }
         }
