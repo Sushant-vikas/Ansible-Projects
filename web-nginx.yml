@@ -5,6 +5,11 @@
     - name: update yum
       yum:
         update_cache: yes
+        
+# enable EPEL repo by installing the epel-release package
+    - name: install EPEL repo
+        become: yes
+        yum: name=epel-release state=present 
 
     - name: Insatll nginx
       yum:
