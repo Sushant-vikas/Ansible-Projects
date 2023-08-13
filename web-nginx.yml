@@ -1,0 +1,24 @@
+- name: configure nginx web serber
+  hosts: all
+  become: true
+  tasks:
+    - name: update yum
+      yum:
+        update_cache: yes
+
+    - name: Insatll nginx
+      yum:
+        name: nginx
+        state: latest
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploye web app
+      copy:
+        src: index.html
+        dest: var/www/html
+          
